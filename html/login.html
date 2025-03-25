@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone - вхід</title>
+    <link rel="icon" href="icon.jpg">
+    <link rel="stylesheet" href="../css/style_reg.css">
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box">
+            <h2>Вхід</h2>
+            <form id="loginForm" method="POST">
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    placeholder="Ім'я користувача"
+                    minlength="4"
+                    maxlength="16"
+                >
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Пароль"
+                    minlength="8"
+                >
+                <div class="options">
+                    <input
+                        type="checkbox"
+                        id="remember"
+                        name="remember"
+                    >
+                    <label for="remember">Запам'ятати?</label>
+                    <a href="#" class="forgot-password">Забули пароль?</a>
+                </div>
+                <button type="submit">Увійти</button>
+                <p>
+                    Немає облікового запису?
+                    <a href="registr.html" class="reg" id="register">Реєстрація</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const usernameRegex = /^[a-zA-Z0-9_]{4,16}$/;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,17}$/;
+        let isValid = true;
+        if (!usernameRegex.test(username.value)) {
+            username.classList.add('error');
+            isValid = false;
+        } else {
+            username.classList.remove('error');
+        }
+        if (!passwordRegex.test(password.value)) {
+            password.classList.add('error');
+            isValid = false;
+        } else {
+            password.classList.remove('error');
+        }
+        if (isValid) {
+            console.log('Форма валідна');
+        }
+    });
+    </script>
+</body>
+</html>

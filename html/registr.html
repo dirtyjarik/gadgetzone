@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Gadget Zone - Реєстрація</title>
+    <link rel="stylesheet" href="../css/style-registr.css">
+    <link rel="icon" href="icon.jpg">
+</head>
+<body>
+  <div class="container" id="container">
+      <div class="login-box">
+          <h2>Реєстрація</h2>
+          <form id="registr" method="POST">
+              <input type="text" id="name" name="name" placeholder="Повне ім'я">
+              <div id="nameError" class="error-message"></div>
+
+              <input type="text" id="username" name="username" placeholder="Логін">
+              <div id="usernameError" class="error-message"></div>
+
+              <input type="email" id="email" name="email" placeholder="Email">
+              <div id="emailError" class="error-message"></div>
+
+              <input type="tel" id="nomer" name="nomer" placeholder="Телефон">
+              <div id="nomerError" class="error-message"></div>
+
+              <input type="password" id="password" name="password" placeholder="Пароль">
+              <div id="passwordError" class="error-message"></div>
+
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Підтвердження паролю">
+              <div id="invalidPass" class="error-message"></div>
+
+              <button type="submit">Реєстрація</button>
+          </form>
+
+          <div id="resultat"></div>
+      </div>
+  </div>
+  <script>
+    document.getElementById('registr').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+      let resultat = document.getElementById('resultat');
+      let container = document.getElementById('container');
+      let formData = {};
+
+      function validateField(field, regex, errorElement, errorMessage, formFieldName) {
+        const value = field.value.trim();
+        if (regex.test(value)) {
+          field.classList.remove('error');
+          field.classList.add('success');
+          errorElement.textContent = '';
+          if (formFieldName === 'name') {
+            formData.name = value;
+          } else if (formFieldName === 'username') {
+            formData.username = value;
+          } else if (formFieldName === 'email') {
+            formData.email = value;
+          } else if (formFieldName === 'nomer') {
+            formData.nomer = value;
+          }
+        } else {
+          field.classList.add('error');
+          field.classList.remove('success');
+          errorElement.textContent = errorMessage;
+          isValid = false;
+        }
+      }
+
+      // Перевірка полів
+      let name = document.getElementById('name');
+      let nameError = document.getElementById('nameError');
+      validateField(name, /^[А-Яа-яЇїІіЄєҐґ\s]{3,30}$/, nameError, 'Ім\'я: 3-30 літер, тільки кирилиця', 'name');
+
+      let username = document.getElementById('username');
+      let usernameError = document.getElementById('usernameError');
+      validateField(username, /^[a-zA-Z0-9_]{4,16}$/, usernameError, 'Логін: 4-16 символів, літери/цифри/підкреслення', 'username');
+
+      let email = document.getElementById('email');
+      let emailError = document.getElementById('emailError');
+      validateField(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, emailError, 'Невірний формат email', 'email');
+
+      let nomer = document.getElementById('nomer');
+      let nomerError = document.getElementById('nomerError');
+      validateField(nomer, /^\+380\d{9}$/, nomerError, 'Телефон: +380XXXXXXXXX', 'nomer');
+
+      let password = document.getElementById('password');
+      let passwordError = document.getElementById('passwordError');
+      validateField(password, /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, passwordError, 'Пароль: мін. 8 символів, літери та цифри');
+
+      let confirmPassword = document.getElementById('confirmPassword');
+      let invalidPass = document.getElementById('invalidPass');
+      if (password.value === confirmPassword.value) {
+        confirmPassword.classList.remove('error');
+        confirmPassword.classList.add('success');
+        invalidPass.textContent = '';
+        formData.password = password.value;
+      } else {
+        confirmPassword.classList.add('error');
+        confirmPassword.classList.remove('success');
+        invalidPass.textContent = 'Паролі не збігаються';
+        isValid = false;
+      }
+
+  </script>
+</body>
+</html>

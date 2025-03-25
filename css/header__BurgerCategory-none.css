@@ -1,0 +1,139 @@
+header {
+	padding: 15px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #A6CAF0;
+	background-color: #d8d8fd;
+	position: sticky;	
+	top: 0;
+	z-index: 100;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo img {
+	height: 70px;
+}
+.search-container {
+	flex-grow: 1;
+	max-width: 600px;
+	margin: 0 20px;
+	position: relative;
+	border-radius: 15px;
+	font-size: 14px;
+}
+.search-container input {
+	width: 100%;
+	padding: 10px 15px;
+	border: 1px solid #1e90ff;
+	border-radius: 15px;
+	font-size: 14px;
+}
+
+
+.catalog-container {
+  max-width: 100px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+.catalog-container span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e90ff;
+}
+.catalog-container:hover {
+  background-color: #f0f8ff;
+}
+.con {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.con img {
+	width: 40px;
+	height: 40px;
+}
+.sity {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: 150px;
+}
+.sity img {
+  height: 10px;
+  transition: transform 0.3s ease;
+}
+.sity img.rotate {
+  transform: rotate(180deg);
+}
+.sity-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #1e90ff;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 100px;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.sity-menu.active {
+  display: block;
+}
+.sity-name {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.sity-name:hover {
+  background-color: #f5f5f5;
+}
+.burger-container {
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+.burger-menu {
+  border: 1px solid #1e90ff;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 10;
+}
+.burger-menu.active {
+  display: block;
+}
+.burger-content {
+  padding: 10px 0;
+}
+.burger-content div {
+  padding: 8px 16px;
+}
+.burger-content a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+.burger-content div:hover {
+  background-color: #f5f5f5;
+}
+.burger-content a:hover {
+  color: #000;
+}

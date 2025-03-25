@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url('../photo/fon_reg.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.container {
+	width: 400px;
+	min-height: 720px;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(1px);
+	transition: height 0.3s ease;
+}
+
+.login-box {
+	width: 100%;
+	max-width: 350px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h2 {
+	color: #fff;
+	margin: 20px 0 30px;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+input {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 14px;
+	transition: all 0.3s ease;
+}
+
+input::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+	outline: none;
+	border-color: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.2);
+}
+
+input.error {
+	border-color: #ff4444;
+	background: rgba(255, 68, 68, 0.1);
+}
+
+input.success {
+	border-color: #00C851;
+	background: rgba(0, 200, 81, 0.1);
+}
+
+.error-message {
+	color: #ff4444;
+	font-size: 12px;
+	text-align: left;
+	margin-top: 4px;
+	min-height: 18px;
+	opacity: 0.9;
+}
+
+button {
+	width: 100%;
+	padding: 12px;
+	margin-top: 20px;
+	background: #fff;
+	color: #000;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+button:hover {
+	background: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+#resultat {
+	margin-top: 20px;
+	padding: 15px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.1);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+#resultat h3 {
+	color: #fff;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+#resultat p {
+	color: #fff;
+	margin: 5px 0;
+	font-size: 14px;
+	text-align: left;
+}
+
+/* @media (max-width: 480px) {
+	.container {
+		 width: 90%;
+		 margin: 20px;
+		 min-height: 650px;
+	}
+	
+	.login-box {
+		 max-width: 100%;
+	}
+	
+	h2 {
+		 font-size: 24px;
+	}
+	
+	input, button {
+		 padding: 10px;
+	}
+} */

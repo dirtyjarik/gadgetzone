@@ -1,0 +1,174 @@
+
+.main {
+	background: #fff;
+	padding: 25px;
+	margin: 20px auto;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	width: 1400px;
+	padding: 20px;
+}
+
+
+
+.main h2 {
+	margin-left: 15px;
+}
+.sity-shops {
+	display: flex;
+	padding: 20px 0;
+	margin-bottom: 20px;
+	gap: 15px;
+}
+
+.sity-shop {
+	width: 300px;
+	text-align: center;
+	padding: 12px 20px;
+	background-color: white;
+	border: 1px solid #1e90ff;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.sity-shop:hover {
+	background-color: #1e90ff;
+}
+
+.sity-shop:hover span {
+	color: white;
+}
+
+.sity-shop span {
+	color: #333;
+	font-size: 16px;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+.active{
+	background-color: #56a9fd;
+}
+.active span{
+	color: white;
+}
+
+.map-list {
+	display: none;
+	gap: 30px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.actual{
+	display: flex;
+}
+.list-shop {
+	flex: 1;
+	max-width: 450px;
+	padding: 15px;
+	background-color: #f6f6f6;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-sector {
+	padding: 15px;
+	margin-bottom: 15px;
+	background-color: white;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+.list-sector-active{
+	transform: translateX(5px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-left: 3px solid #1e90ff;
+}
+.list-sector:hover {
+	transform: translateX(5px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-left: 3px solid #1e90ff;
+}
+
+.list-sector span {
+	color: #333;
+	font-size: 14px;
+	line-height: 1.4;
+	display: block;
+}
+
+.map {
+	margin-left: 20px;
+	display: none;
+	border-radius: 30px; 
+
+}
+
+.now{
+	display: flex;
+}
+
+@media (max-width: 1024px) {/*nim 768*/
+	.logo img{
+		max-height: 50px;
+	}
+	.main{
+		max-width: 1000px;
+	}
+}
+@media (max-width: 768px) {/*nim 768*/
+	.logo img{
+		max-height: 50px;
+	}
+	.main{
+		max-width: 700px;
+	}
+	.sity-shop{
+		padding: 5px 5px;
+	}
+	.sity-shop span{
+		font-size: 14px;
+
+	}
+	.footer-columns{
+		display: inline;
+	}
+	.logo-container{
+		display: none;
+	}
+	
+}
+@media (max-width: 425px) {/*nim 768*/
+	.logo img{
+		max-height: 50px;
+	}
+	.main{
+		max-width: 390px;
+		padding: 5px;
+	}
+	.shop{
+		padding: 5px;
+
+	}
+	.sity-shops{
+		gap: 2px;
+	}
+	.sity-shop{
+		padding: 5px 5px;
+	}
+	.sity-shop span{
+		font-size: 14px;
+
+	}
+	.footer-columns{
+		display: inline;
+	}
+	.logo-container{
+		display: none;
+	}
+	.search-container{
+		display: none;
+	}
+	
+}
